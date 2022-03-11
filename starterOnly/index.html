@@ -56,46 +56,51 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
+            <!---->
             <form
-              name="reserve"
-              action="index.html"
-              method="get"
-              onsubmit="return validate();"
+              name="reserve" action="index.html" id="form" method="get"
             >
+            <!--Fname-->
               <div
-                class="formData">
-                <label>Prénom</label><br>
+                class="formData" data-error="Vous devez entrer 2 caractères ou plus." data-error-visible="false">
+                <label for="first">Prénom</label><br>
                 <input
-                  class="text-control"
+                  class="text-control success"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
+                  placeholder="Prénom"
                 /><br>
               </div>
+              <!--Lname-->
               <div
-                class="formData">
-                <label>Nom</label><br>
+                class="formData"data-error="Vous devez entrer 2 caractères ou plus." data-error-visible="false">
+                <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
+                  placeholder="Nom"
                 /><br>
               </div>
+              <!--email-->
               <div
-                class="formData">
-                <label>E-mail</label><br>
+                class="formData" data-error="Vous devez entrer une adresse email valide." data-error-visible="false">
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
+                  placeholder="monmail@email.com"
                 /><br>
               </div>
+              <!--naissance-->
               <div
-                class="formData">
-                <label>Date de naissance</label><br>
+                class="formData" data-error="Vous devez entrer votre date de naissance." data-error-visible="false">
+                <label  for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
@@ -103,14 +108,16 @@
                   name="birthdate"
                 /><br>
               </div>
+              <!--tournois-->
               <div
-                class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                class="formData" data-error="Veuillez saisir une valeur numérique." data-error-visible="false">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" placeholder="0">
               </div>
+              <!--villes-->
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData">
+                class="formData" id="allLocations" data-error="Veuillez sélectionner une option." data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -178,9 +185,10 @@
                   Portland</label
                 >
               </div>
+              <!--validation-->
 
               <div
-                class="formData">
+                class="formData" data-error="Vous devez accepter les conditions d'utilisation." data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -200,6 +208,7 @@
                 <br>
               </div>
               <input
+                id="form-submit"
                 class="btn-submit"
                 type="submit"
                 class="button"
@@ -207,6 +216,19 @@
               />
             </form>
           </div>
+        </div>
+      </div>
+      <!--confirmation formulaire-->
+      <div class="container-confirmation-submit">
+        <div class="submitted-form">
+          <span class="close-modal-submit"></span>
+          <p>
+            Merci !
+            <br>
+            Votre réservation a été prise en compte !
+          </p>
+          <button id="close-btn-confirmation"> Fermer
+          </button>
         </div>
       </div>
     </main>
