@@ -137,7 +137,7 @@ function checkBirthdate() {
 // tournois check 
 
 function checkTournamentsQuantity() {
-  if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
+  if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 1 || quantity.value.trim() > 99 )  {
       quantity.parentElement.setAttribute('data-error-visible', 'true');
       quantity.style.border = '3px solid red';
       return false;
